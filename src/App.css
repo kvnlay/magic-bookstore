@@ -2,3 +2,16 @@
   text-align: center;
 }
 
+.book-table {
+  margin: 100px auto;
+  border: 1px solid black;
+  width: 700px;
+}
+
+.book {
+  margin: 1px solid black;
+}
+
+input {
+  margin: 10px;
+}
