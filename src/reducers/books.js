@@ -1,6 +1,4 @@
-const getRandom = () => {
-  return Math.round(Math.random() * 100);
-};
+const getRandom = () => Math.round(Math.random() * 100);
 
 const initialState = [
   {
