@@ -48,7 +48,7 @@ class BooksForm extends React.Component {
 }
 
 BooksForm.propTypes = {
-  addBook: PropTypes.func.isRequired,
+  createBook: PropTypes.func.isRequired,
 };
 
 export default connect(null, { createBook })(BooksForm);
