@@ -28,7 +28,7 @@ import bookCategories from '../bookCategories';
 class BooksForm extends React.Component {
   state = {
     title: '',
-    category: '',
+    category: 'Action',
   };
 
   handleChange = (e) => {
@@ -44,9 +44,32 @@ class BooksForm extends React.Component {
     createBook({ title, category });
     this.setState({
       title: '',
-      category: '',
+      category: 'Action',
     });
+  }
+
+  render() {
+    const { title, category } = this.state;
+    return (
+      <form>
+        ADD NEW BOOK
+        <br />
+        <input name="title" value={title} placeholder="Book title" onChange={this.handleChange} />
+
+        <select name="category" value={category} onChange={this.handleChange} >
+          {
+            bookCategories.map(c => (<option key={c}>{c}</option>))
+          }
+        </select>
+
+        <button type="button" onClick={this.handleSubmit}>ADD BOOK</button>
+      </form>
+    );
   }
 }
 
-export default BooksForm;
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired,
+};
+
+export default connect(null, { createBook })(BooksForm);
