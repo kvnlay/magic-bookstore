@@ -1,6 +1,4 @@
-const getRandom = () => {
-  return Math.round(Math.random() * 100);
-};
+const getRandom = () => Math.round(Math.random() * 100);
 
 const initialState = [
   {
@@ -26,7 +24,11 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case CREATE_BOOK:
-      return [...state, ...payload];
+      return [
+        ...state,
+        { ...payload, id: getRandom() },
+      ];
+
 
     case REMOVE_BOOK:
       return state.filter((book) => payload.id !== book.id);
