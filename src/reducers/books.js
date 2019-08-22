@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
 
 const getRandom = () => Math.round(Math.random() * 100);
