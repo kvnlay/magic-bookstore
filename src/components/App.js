@@ -1,15 +1,13 @@
 import React from 'react';
-import BooksForm from './components/BooksForm';
-import BooksList from './components/BooksList';
+import BooksForm from './BooksForm';
+import BooksList from './BooksList';
 import './App.css';
 
-function App() {
-  return (
+const App = () => (
     <div className="App">
       <BooksList />
       <BooksForm />
     </div>
-  );
-}
+);
 
 export default App;

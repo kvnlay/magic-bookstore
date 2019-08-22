@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeBook } from '../actions';
 import Book from './Book';
-import '../App.css';
+import './App.css';
 
 
 const mapStateToProps = (state) => ({

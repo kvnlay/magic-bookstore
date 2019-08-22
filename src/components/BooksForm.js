@@ -19,7 +19,7 @@ class BooksForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { createBook } = this.props;
-    const { title, category} = this.state;
+    const { title, category } = this.state;
     createBook({ title, category });
     this.setState({
       title: '',

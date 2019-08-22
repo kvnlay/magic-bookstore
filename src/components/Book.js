@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.css';
+import './App.css';
 
 const Book = (props) => {
   const {

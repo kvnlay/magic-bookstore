@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
     case CREATE_BOOK:
       return [
         ...state,
-        { ...action.payload, id: getRandom() },
+        { ...action.book, id: getRandom() },
       ];
 
 
