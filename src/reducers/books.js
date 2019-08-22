@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/named
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
+
 const getRandom = () => Math.round(Math.random() * 100);
 
 const initialState = [
@@ -18,15 +21,12 @@ const initialState = [
   },
 ];
 
-const CREATE_BOOK = 'CREATE_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [
         ...state,
-        { ...action.payload, id: getRandom() },
+        { ...action.book, id: getRandom() },
       ];
 
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeBook, changeFilter } from '../actions';
 import Book from './Book';
-import '../App.css';
+import './App.css';
 import CategoryFilter from './CategoryFilter';
 
 
@@ -18,12 +18,12 @@ const BooksList = ({ books, deleteBook, handleFilterChange }) => (
     <h1>Books list</h1>
     <table className="book-table">
       <tbody>
-        {books.map((book) => (
+        {books.map(({ id, title, category }) => (
           <Book
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            category={book.category}
+            key={id}
+            id={id}
+            title={title}
+            category={category}
             removeBook={deleteBook}
           />
         ))}

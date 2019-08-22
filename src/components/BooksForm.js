@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -5,10 +6,13 @@ import { createBook } from '../actions';
 import bookCategories from '../bookCategories';
 
 class BooksForm extends React.Component {
-  state = {
-    title: '',
-    category: 'Action',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      category: 'Action',
+    };
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -18,8 +22,9 @@ class BooksForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // eslint-disable-next-line no-shadow
     const { createBook } = this.props;
-    const { title, category} = this.state;
+    const { title, category } = this.state;
     createBook({ title, category });
     this.setState({
       title: '',
@@ -35,13 +40,13 @@ class BooksForm extends React.Component {
         <br />
         <input name="title" value={title} placeholder="Book title" onChange={this.handleChange} />
 
-        <select name="category" value={category} onChange={this.handleChange} >
+        <select name="category" value={category} onChange={this.handleChange}>
           {
-            bookCategories.map(c => (<option key={c}>{c}</option>))
+            bookCategories.map((c) => (<option key={c}>{c}</option>))
           }
         </select>
 
-        <button type="button" onClick={this.handleSubmit}>ADD BOOK</button>
+        <button type="submit" onClick={this.handleSubmit}>ADD BOOK</button>
       </form>
     );
   }
