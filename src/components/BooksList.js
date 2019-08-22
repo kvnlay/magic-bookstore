@@ -15,7 +15,6 @@ const mapStateToProps = (state) => ({
 const BooksList = ({ books, deleteBook, handleFilterChange }) => (
   <div>
     <CategoryFilter handleFilterChange={handleFilterChange} />
-    <h1>Books list</h1>
     <table className="book-table">
       <tbody>
         {books.map(({ id, title, category }) => (
