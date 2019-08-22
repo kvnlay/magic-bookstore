@@ -1,8 +1,8 @@
 import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
 
-const createBook = (payload) => ({
+const createBook = (book) => ({
   type: CREATE_BOOK,
-  payload,
+  book,
 });
 
 const removeBook = (id) => ({
