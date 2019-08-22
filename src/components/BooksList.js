@@ -16,12 +16,12 @@ const BooksList = ({ books, deleteBook }) => (
     <h1>Books list</h1>
     <table className="book-table">
       <tbody>
-        {books.map((book) => (
+        {books.map(({ id, title, category }) => (
           <Book
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            category={book.category}
+            key={id}
+            id={id}
+            title={title}
+            category={category}
             removeBook={deleteBook}
           />
         ))}
