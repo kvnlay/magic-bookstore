@@ -6,9 +6,8 @@ import { removeBook } from '../actions';
 import Book from './Book';
 import './App.css';
 
-
-const mapStateToProps = (state) => ({
-  books: state.books,
+const mapStateToProps = state => ({
+  books: state.books
 });
 
 const BooksList = ({ books, deleteBook }) => (
@@ -32,13 +31,12 @@ const BooksList = ({ books, deleteBook }) => (
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
-  deleteBook: PropTypes.func.isRequired,
+  deleteBook: PropTypes.func.isRequired
 };
-
 
 export default connect(
   mapStateToProps,
   {
-    deleteBook: removeBook,
-  },
+    deleteBook: removeBook
+  }
 )(BooksList);

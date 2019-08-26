@@ -3,10 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 
-const Book = (props) => {
-  const {
-    id, title, category, removeBook,
-  } = props;
+const Book = ({ id, title, category, removeBook }) => {
   return (
     <tr className="book">
       <td>{id}</td>
@@ -16,7 +13,9 @@ const Book = (props) => {
         <button
           className="remove"
           type="button"
-          onClick={() => { removeBook(id); }}
+          onClick={() => {
+            removeBook(id);
+          }}
         >
           Remove book
         </button>
@@ -29,7 +28,7 @@ Book.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  removeBook: PropTypes.func.isRequired,
+  removeBook: PropTypes.func.isRequired
 };
 
 export default Book;

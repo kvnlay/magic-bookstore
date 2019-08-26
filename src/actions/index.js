@@ -1,13 +1,13 @@
 import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
 
-const createBook = (book) => ({
+const createBook = book => ({
   type: CREATE_BOOK,
-  book,
+  book
 });
 
-const removeBook = (id) => ({
+const removeBook = id => ({
   type: REMOVE_BOOK,
-  id,
+  id
 });
 
 export { createBook, removeBook };
