@@ -6,31 +6,27 @@ import { createBook } from '../actions';
 import bookCategories from '../bookCategories';
 
 class BooksForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      category: 'Action',
-    };
-  }
+  state = {
+    title: '',
+    category: 'Action'
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-    // eslint-disable-next-line no-shadow
-    const { createBook } = this.props;
+    const { addBook } = this.props;
     const { title, category } = this.state;
-    createBook({ title, category });
+    addBook({ title, category });
     this.setState({
       title: '',
-      category: 'Action',
+      category: 'Action'
     });
-  }
+  };
 
   render() {
     const { title, category } = this.state;
@@ -38,22 +34,30 @@ class BooksForm extends React.Component {
       <form>
         ADD NEW BOOK
         <br />
-        <input name="title" value={title} placeholder="Book title" onChange={this.handleChange} />
-
+        <input
+          name="title"
+          value={title}
+          placeholder="Book title"
+          onChange={this.handleChange}
+        />
         <select name="category" value={category} onChange={this.handleChange}>
-          {
-            bookCategories.map((c) => (<option key={c}>{c}</option>))
-          }
+          {bookCategories.map(c => (
+            <option key={c}>{c}</option>
+          ))}
         </select>
-
-        <button type="submit" onClick={this.handleSubmit}>ADD BOOK</button>
+        <button type="submit" onClick={this.handleSubmit}>
+          ADD BOOK
+        </button>
       </form>
     );
   }
 }
 
 BooksForm.propTypes = {
-  createBook: PropTypes.func.isRequired,
+  addBook: PropTypes.func.isRequired
 };
 
-export default connect(null, { createBook })(BooksForm);
+export default connect(
+  null,
+  { addBook: createBook }
+)(BooksForm);

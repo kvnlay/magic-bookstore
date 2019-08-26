@@ -7,31 +7,27 @@ const initialState = [
   {
     id: getRandom(),
     title: 'The Great Gatsby',
-    category: 'Action',
+    category: 'Action'
   },
   {
     id: getRandom(),
     title: 'The Grapes of Wrath',
-    category: 'Action',
+    category: 'Action'
   },
   {
     id: getRandom(),
     title: 'Nineteen Eighty-Four',
-    category: 'Sci-Fi',
-  },
+    category: 'Sci-Fi'
+  }
 ];
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      return [
-        ...state,
-        { ...action.book, id: getRandom() },
-      ];
-
+      return [...state, { ...action.book, id: getRandom() }];
 
     case REMOVE_BOOK:
-      return state.filter((book) => action.id !== book.id);
+      return state.filter(book => action.id !== book.id);
     default:
       return state;
   }

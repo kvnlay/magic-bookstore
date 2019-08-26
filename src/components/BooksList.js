@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,9 +6,8 @@ import Book from './Book';
 import './App.css';
 import CategoryFilter from './CategoryFilter';
 
-
-const mapStateToProps = (state) => ({
-  books: state.books.filter((book) => (state.filter === '' ? true : book.category === state.filter)),
+const mapStateToProps = state => ({
+  books: state.books
 });
 
 const BooksList = ({ books, deleteBook, handleFilterChange }) => (
@@ -35,14 +33,13 @@ const BooksList = ({ books, deleteBook, handleFilterChange }) => (
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired
 };
-
 
 export default connect(
   mapStateToProps,
   {
     deleteBook: removeBook,
-    handleFilterChange: changeFilter,
-  },
+    handleFilterChange: changeFilter
+  }
 )(BooksList);
