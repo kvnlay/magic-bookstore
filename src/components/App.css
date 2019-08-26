@@ -32,7 +32,6 @@ body {
 
 .book {
   width: 100%;
-  height: 170px;
   border-radius: 4px;
   margin: 15px auto;
   padding: 15px 20px;
@@ -46,8 +45,8 @@ body {
 /* =================== Panel styles ==================*/
 
 .panel {
-  width: 100%;
   height: 95px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -55,7 +54,6 @@ body {
 }
 
 .logo {
-  height: 37px;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -70,7 +68,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
 }
 
 .panel-icon {
@@ -190,6 +187,10 @@ body {
   color: #4386bf;
 }
 
+.btn-row {
+  color: #e8e8e8;
+}
+
 /* ============= Book form =======================*/
 
 .add-form {
@@ -245,6 +246,7 @@ form button {
 /* ============== filter styles ==================*/
 #filter {
   margin-left: 20px;
+  margin-top: 10px;
 }
 
 .category-filter {
@@ -261,4 +263,31 @@ form button {
 
 .category-filter select {
   width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .panel {
+    padding: 25px 45px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form input[name="title"],
+  form select {
+    flex: none;
+    margin: 10px 0;
+  }
+
+  .book {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .details {
+    text-align: center;
+  }
+
 }

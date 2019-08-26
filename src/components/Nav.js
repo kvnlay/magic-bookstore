@@ -9,12 +9,12 @@ const Nav = () => (
       <h1 className="logo">
           Bookstore CMS
       </h1>
-      <p className="panel-book">
+      {/* <p className="panel-book">
           Books
       </p>
       <p className="panel-cat">
           Categories
-      </p>
+      </p> */}
     </div>
     <div className="panel-icon">
       <FontAwesomeIcon icon={faUser} className="profile-icon" />
