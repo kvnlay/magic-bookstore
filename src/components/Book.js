@@ -1,19 +1,34 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.css';
+import './App.css';
 
-const Book = ({ id, title, category }) => (
-  <tr className="book">
-    <td>{id}</td>
-    <td>{title}</td>
-    <td>{category}</td>
-  </tr>
-);
+const Book = ({ id, title, category, removeBook }) => {
+  return (
+    <tr className="book">
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{category}</td>
+      <td>
+        <button
+          className="remove"
+          type="button"
+          onClick={() => {
+            removeBook(id);
+          }}
+        >
+          Remove book
+        </button>
+      </td>
+    </tr>
+  );
+};
 
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  removeBook: PropTypes.func.isRequired
 };
 
 export default Book;

@@ -1,24 +1,62 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createBook } from '../actions';
+import bookCategories from '../bookCategories';
 
-function BooksForm() {
-  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  return (
-    <div>
+class BooksForm extends React.Component {
+  state = {
+    title: '',
+    category: 'Action'
+  };
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { addBook } = this.props;
+    const { title, category } = this.state;
+    addBook({ title, category });
+    this.setState({
+      title: '',
+      category: 'Action'
+    });
+  };
+
+  render() {
+    const { title, category } = this.state;
+    return (
       <form>
-        <label>
-          Title:
-          <input type="text" name="title" />
-        </label>
-        <label>
-          Choose the book category: 
-          <select>
-            {categories.map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)}
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
+        ADD NEW BOOK
+        <br />
+        <input
+          name="title"
+          value={title}
+          placeholder="Book title"
+          onChange={this.handleChange}
+        />
+        <select name="category" value={category} onChange={this.handleChange}>
+          {bookCategories.map(c => (
+            <option key={c}>{c}</option>
+          ))}
+        </select>
+        <button type="submit" onClick={this.handleSubmit}>
+          ADD BOOK
+        </button>
       </form>
-    </div>
-  );
+    );
+  }
 }
 
-export default BooksForm;
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { addBook: createBook }
+)(BooksForm);

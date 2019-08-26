@@ -1,35 +1,33 @@
-const getRandom = () => {
-  return Math.round(Math.random() * 100);
-};
+// eslint-disable-next-line import/named
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
+
+const getRandom = () => Math.round(Math.random() * 100);
 
 const initialState = [
   {
     id: getRandom(),
     title: 'The Great Gatsby',
-    category: 'Action',
+    category: 'Action'
   },
   {
     id: getRandom(),
     title: 'The Grapes of Wrath',
-    category: 'Action',
+    category: 'Action'
   },
   {
     id: getRandom(),
     title: 'Nineteen Eighty-Four',
-    category: 'Sci-Fi',
-  },
+    category: 'Sci-Fi'
+  }
 ];
 
-const CREATE_BOOK = 'CREATE_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
-
-export default (state = initialState, { type, payload }) => {
-  switch (type) {
+export default (state = initialState, action) => {
+  switch (action.type) {
     case CREATE_BOOK:
-      return [...state, ...payload];
+      return [...state, { ...action.book, id: getRandom() }];
 
     case REMOVE_BOOK:
-      return state.filter((book) => payload.id !== book.id);
+      return state.filter(book => action.id !== book.id);
     default:
       return state;
   }
