@@ -43,9 +43,8 @@ body {
 }
 
 .author {
-  width: 120px;
   height: 19px;
-  font-family: RobotoSlab;
+  font-family: ' RobotoSlab', serif;
   font-size: 14px;
   font-weight: 300;
   font-style: normal;
@@ -375,6 +374,9 @@ form button {
     margin: 10px 0;
   }
 
+}
+
+@media screen and (max-width: 920px) {
   .book {
     flex-direction: column;
     justify-content: center;
@@ -385,4 +387,7 @@ form button {
     text-align: center;
   }
 
+  td:nth-of-type(2) {
+    margin-bottom: 20px;
+  }
 }
