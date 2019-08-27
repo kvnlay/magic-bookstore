@@ -55,6 +55,28 @@ body {
   color: #4386bf;
 }
 
+.circular-bar {
+  width: 70px;
+  height: 70px;
+  border: 4px solid #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.progress-bar {
+  width: 70px;
+  height: 70px;
+  border: 4px solid;
+  border-radius: 50%;
+  border-bottom: #4386bf;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  top: -4px;
+  left: -4px;
+}
+
 /* =================== Panel styles ==================*/
 
 .panel {

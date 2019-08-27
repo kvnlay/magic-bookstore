@@ -9,18 +9,21 @@ const initialState = [
     title: 'The Great Gatsby',
     author: 'Samuel O Katale',
     category: 'Action',
+    progress: 100,
   },
   {
     id: uuid(),
     title: 'The Grapes of Wrath',
     author: 'Matain Aoth',
     category: 'Action',
+    progress: 23,
   },
   {
     id: uuid(),
     title: 'Nineteen Eighty-Four',
     author: 'Fredic Ojambo',
     category: 'Sci-Fi',
+    progress: 89,
   },
 ];
 

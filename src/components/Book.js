@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import ProgressBar from './ProgressBar';
 
 const Book = (props) => {
   const {
-    id, title, author, category, removeBook,
+    id, title, author, category, progress, removeBook,
   } = props;
   return (
     <tr className="book">
@@ -39,8 +38,7 @@ const Book = (props) => {
         </div>
       </td>
       <td className="progress">
-        <div className="progress-circle"><FontAwesomeIcon icon={faUser} className="profile-icon" /></div>
-        <div className="progress-percentage"></div>
+        <ProgressBar progress={progress} />
       </td>
       <td className="update">
         <button type="button" className="update-button">
@@ -56,6 +54,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
   removeBook: PropTypes.func.isRequired,
 };
 

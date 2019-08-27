@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { createBook } from '../actions';
 import bookCategories from '../bookCategories';
 
+const getProgress = () => Math.round(Math.random() * 100);
+
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +14,7 @@ class BooksForm extends React.Component {
       title: '',
       author: 'Unknown',
       category: 'Action',
+      progress: getProgress(),
     };
   }
 
@@ -25,12 +28,17 @@ class BooksForm extends React.Component {
     e.preventDefault();
     // eslint-disable-next-line no-shadow
     const { createBook } = this.props;
-    const { title, author, category } = this.state;
-    createBook({ title, author, category });
+    const {
+      title, author, category, progress,
+    } = this.state;
+    createBook({
+      title, author, category, progress,
+    });
     this.setState({
       title: '',
       author: '',
       category: 'Action',
+      progress: getProgress(),
     });
   }
 
