@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+import './App.css';import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Book = (props) => {
   const {
@@ -38,7 +39,7 @@ const Book = (props) => {
         </div>
       </td>
       <td className="progress">
-        <div className="progress-circle"></div>
+        <div className="progress-circle"><FontAwesomeIcon icon={faUser} className="profile-icon" /></div>
         <div className="progress-percentage"></div>
       </td>
       <td className="update">
