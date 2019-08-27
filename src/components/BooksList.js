@@ -17,11 +17,14 @@ const BooksList = ({ books, deleteBook, handleFilterChange }) => (
     <CategoryFilter handleFilterChange={handleFilterChange} />
     <table className="book-table">
       <tbody>
-        {books.map(({ id, title, category }) => (
+        {books.map(({
+          id, title, author, category,
+        }) => (
           <Book
             key={id}
             id={id}
             title={title}
+            author={author}
             category={category}
             removeBook={deleteBook}
           />

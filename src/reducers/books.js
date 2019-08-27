@@ -1,22 +1,25 @@
 // eslint-disable-next-line import/named
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
 
-const getRandom = () => Math.round(Math.random() * 100);
+const uuid = require('uuid/v1');
 
 const initialState = [
   {
-    id: getRandom(),
+    id: uuid(),
     title: 'The Great Gatsby',
+    author: 'Samuel O Katale',
     category: 'Action',
   },
   {
-    id: getRandom(),
+    id: uuid(),
     title: 'The Grapes of Wrath',
+    author: 'Matain Aoth',
     category: 'Action',
   },
   {
-    id: getRandom(),
+    id: uuid(),
     title: 'Nineteen Eighty-Four',
+    author: 'Fredic Ojambo',
     category: 'Sci-Fi',
   },
 ];
@@ -26,7 +29,7 @@ export default (state = initialState, action) => {
     case CREATE_BOOK:
       return [
         ...state,
-        { ...action.book, id: getRandom() },
+        { ...action.book, id: uuid() },
       ];
 
 

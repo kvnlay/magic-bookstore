@@ -10,6 +10,7 @@ class BooksForm extends React.Component {
     super(props);
     this.state = {
       title: '',
+      author: 'Unknown',
       category: 'Action',
     };
   }
@@ -24,10 +25,11 @@ class BooksForm extends React.Component {
     e.preventDefault();
     // eslint-disable-next-line no-shadow
     const { createBook } = this.props;
-    const { title, category } = this.state;
-    createBook({ title, category });
+    const { title, author, category } = this.state;
+    createBook({ title, author, category });
     this.setState({
       title: '',
+      author: '',
       category: 'Action',
     });
   }
