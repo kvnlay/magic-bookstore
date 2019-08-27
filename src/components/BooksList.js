@@ -7,7 +7,7 @@ import './App.css';
 import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
-  books: state.books
+  books: state.books.filter((book) => (state.filter === '' ? true : book.category === state.filter))
 });
 
 const BooksList = ({ books, deleteBook, handleFilterChange }) => (
