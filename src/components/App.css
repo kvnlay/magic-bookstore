@@ -206,10 +206,16 @@ body {
 
 /* ============= Progress =======================*/
 
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .circular-chart {
   display: block;
   margin: 10px auto;
-  width: 40%;
+  width: 60px;
   height: 60px;
 }
 
@@ -226,6 +232,29 @@ body {
   fill: none;
   stroke-width: 2.8;
   stroke-linecap: round;
+}
+
+.progress-status {
+  margin-left: 14px;
+  font-family: Montserrat;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  text-align: left;
+}
+
+.percent-complete {
+  height: 39px;
+  font-size: 30px;
+}
+
+.completed {
+  height: 18px;
+  opacity: 0.5;
+  font-size: 14px;
 }
 
 @keyframes progress {
