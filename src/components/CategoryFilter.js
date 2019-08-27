@@ -8,7 +8,7 @@ export default function CategoryFilter({ handleFilterChange }) {
     <div className="category-filter">
       <label htmlFor="filter">
         {' '}
-        Filter by category:
+        <span className="filter-label">Filter by category:</span>
         {' '}
         <select name="category" id="filter" onChange={(e) => handleFilterChange(e.target.value)}>
           {

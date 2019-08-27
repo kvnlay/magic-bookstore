@@ -11,7 +11,7 @@ body {
 }
 
 .App {
-  width: 80%;
+  width: 85%;
   margin: 10vh auto;
   text-align: center;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
@@ -148,6 +148,7 @@ body {
 .details button {
   height: 19px;
   border: none;
+  background: none;
   font-family: 'Roboto Slab', serif;
   font-size: 14px;
   font-weight: 300;
@@ -202,6 +203,11 @@ body {
 
 .btn-row {
   color: #e8e8e8;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+  height: 0.875em;
 }
 
 /* ============= Progress =======================*/
@@ -276,6 +282,10 @@ td:nth-of-type(3) {
 }
 
 /* ============= Book form =======================*/
+
+.filter-label {
+  opacity: 0.5;
+}
 
 .add-form {
   width: 80%;
