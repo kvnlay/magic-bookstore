@@ -27,17 +27,14 @@ const ProgressBar = ({ progress }) => (
       </svg>
     </div>
     <div className="progress-status">
-      <p className="percent-complete">
-        {progress}
-      %
-      </p>
+      <p className="percent-complete">{progress}%</p>
       <span className="completed">completed</span>
     </div>
   </div>
 );
 
 ProgressBar.propTypes = {
-  progress: PropTypes.number.isRequired,
+  progress: PropTypes.number.isRequired
 };
 
 export default ProgressBar;

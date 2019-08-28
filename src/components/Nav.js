@@ -6,15 +6,7 @@ import './App.css';
 const Nav = () => (
   <div className="panel">
     <div className="menu">
-      <h1 className="logo">
-          Bookstore CMS
-      </h1>
-      {/* <p className="panel-book">
-          Books
-      </p>
-      <p className="panel-cat">
-          Categories
-      </p> */}
+      <h1 className="logo">Bookstore CMS</h1>
     </div>
     <div className="panel-icon">
       <FontAwesomeIcon icon={faUser} className="profile-icon" />

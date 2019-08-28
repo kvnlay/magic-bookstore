@@ -7,7 +7,9 @@ import './App.css';
 import CategoryFilter from './CategoryFilter';
 
 const mapStateToProps = state => ({
-  books: state.books.filter((book) => (state.filter === '' ? true : book.category === state.filter))
+  books: state.books.filter(book =>
+    state.filter === '' ? true : book.category === state.filter
+  )
 });
 
 const BooksList = ({ books, deleteBook, handleFilterChange }) => (
@@ -15,9 +17,7 @@ const BooksList = ({ books, deleteBook, handleFilterChange }) => (
     <CategoryFilter handleFilterChange={handleFilterChange} />
     <table className="book-table">
       <tbody>
-        {books.map(({
-          id, title, author, category, progress,
-        }) => (
+        {books.map(({ id, title, author, category, progress }) => (
           <Book
             key={id}
             id={id}

@@ -1,9 +1,8 @@
-
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createBook } from "../actions";
-import bookCategories from "../bookCategories";
+import bookCategories from "../utilities/bookCategories";
 import { getProgress } from "../utilities";
 
 class BooksForm extends React.Component {
