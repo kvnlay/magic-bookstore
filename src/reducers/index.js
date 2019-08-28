@@ -4,5 +4,5 @@ import filter from './filter';
 
 export default combineReducers({
   books,
-  filter,
+  filter
 });

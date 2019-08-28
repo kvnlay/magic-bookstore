@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/named
+
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
 
 const uuid = require('uuid/v1');
@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
 
 
     case REMOVE_BOOK:
-      return state.filter((book) => action.id !== book.id);
+      return state.filter(book => action.id !== book.id);
     default:
       return state;
   }

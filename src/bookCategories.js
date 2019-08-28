@@ -5,7 +5,7 @@ const bookCategories = [
   'Horror',
   'Kids',
   'Learning',
-  'Sci-Fi',
+  'Sci-Fi'
 ];
 
 export default bookCategories;

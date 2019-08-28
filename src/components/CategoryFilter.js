@@ -21,5 +21,5 @@ export default function CategoryFilter({ handleFilterChange }) {
 }
 
 CategoryFilter.propTypes = {
-  handleFilterChange: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired
 };
