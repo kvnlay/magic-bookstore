@@ -2,11 +2,15 @@ import React from 'react';
 import BooksForm from './BooksForm';
 import BooksList from './BooksList';
 import './App.css';
+import Nav from './Nav';
 
 const App = () => (
   <div className="App">
-    <BooksList />
-    <BooksForm />
+    <Nav />
+    <div className="container">
+      <BooksList />
+      <BooksForm />
+    </div>
   </div>
 );
 

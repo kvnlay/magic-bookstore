@@ -1,30 +1,35 @@
-// eslint-disable-next-line import/named
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
+import { CREATE_BOOK, REMOVE_BOOK } from "../actions/actionTypes";
 
-const getRandom = () => Math.round(Math.random() * 100);
+const uuid = require("uuid/v1");
 
 const initialState = [
   {
-    id: getRandom(),
-    title: 'The Great Gatsby',
-    category: 'Action'
+    id: uuid(),
+    title: "Harry Potter: The Goblet Of Fire",
+    author: "Samuel O Katale",
+    category: "Action",
+    progress: 100
   },
   {
-    id: getRandom(),
-    title: 'The Grapes of Wrath',
-    category: 'Action'
+    id: uuid(),
+    title: "The Gifted Hands",
+    author: "Matain Aoth",
+    category: "Action",
+    progress: 23
   },
   {
-    id: getRandom(),
-    title: 'Nineteen Eighty-Four',
-    category: 'Sci-Fi'
+    id: uuid(),
+    title: "48 Laws Of Power",
+    author: "Fredic Ojambo",
+    category: "Sci-Fi",
+    progress: 89
   }
 ];
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      return [...state, { ...action.book, id: getRandom() }];
+      return [...state, { ...action.book, id: uuid() }];
 
     case REMOVE_BOOK:
       return state.filter(book => action.id !== book.id);

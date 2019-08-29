@@ -24,7 +24,8 @@ module.exports = {
       "error",
       { maximum: 1, when: "multiline" }
     ],
-    "react/state-in-constructor": ["error", "never"]
+    "react/state-in-constructor": ["error", "never"],
+    "import/prefer-default-export": false
   },
   parser: "babel-eslint"
 };

@@ -1,14 +1,16 @@
-/* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createBook } from '../actions';
-import bookCategories from '../bookCategories';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createBook } from "../actions";
+import bookCategories from "../utilities/bookCategories";
+import { getProgress } from "../utilities";
 
 class BooksForm extends React.Component {
   state = {
-    title: '',
-    category: 'Action'
+    title: "",
+    author: "Unknown",
+    category: "Action",
+    progress: getProgress()
   };
 
   handleChange = e => {
@@ -20,35 +22,50 @@ class BooksForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const { addBook } = this.props;
-    const { title, category } = this.state;
-    addBook({ title, category });
+    const { title, author, category, progress } = this.state;
+    addBook({
+      title,
+      author,
+      category,
+      progress
+    });
     this.setState({
-      title: '',
-      category: 'Action'
+      title: "",
+      author: "",
+      category: "Action",
+      progress: getProgress()
     });
   };
 
   render() {
     const { title, category } = this.state;
     return (
-      <form>
-        ADD NEW BOOK
-        <br />
-        <input
-          name="title"
-          value={title}
-          placeholder="Book title"
-          onChange={this.handleChange}
-        />
-        <select name="category" value={category} onChange={this.handleChange}>
-          {bookCategories.map(c => (
-            <option key={c}>{c}</option>
-          ))}
-        </select>
-        <button type="submit" onClick={this.handleSubmit}>
-          ADD BOOK
-        </button>
-      </form>
+      <div className="add-form">
+        <h3>ADD NEW BOOK</h3>
+        <form>
+          <br />
+          <input
+            name="title"
+            value={title}
+            placeholder="Book title"
+            onChange={this.handleChange}
+          />
+
+          <select name="category" value={category} onChange={this.handleChange}>
+            {bookCategories.map(c => (
+              <option key={c}>{c}</option>
+            ))}
+          </select>
+
+          <button
+            type="submit"
+            onClick={this.handleSubmit}
+            className="update-button"
+          >
+            ADD BOOK
+          </button>
+        </form>
+      </div>
     );
   }
 }
