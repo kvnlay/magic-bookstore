@@ -291,6 +291,7 @@ td:nth-of-type(3) {
   width: 80%;
   margin: 30px auto 100px auto;
   text-align: left;
+  padding-bottom: 50px;
 }
 
 .add-form h3 {
