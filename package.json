@@ -6,12 +6,17 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "firebase": "^6.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
+    "react-redux-firebase": "^2.4.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
+    "redux-firestore": "^0.9.0",
+    "redux-thunk": "^2.3.0",
     "uuid": "^3.3.3"
   },
   "scripts": {
