@@ -2,13 +2,12 @@ import firebase from 'firebase/app';`     `
 
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAv6gyNd_-x5_gJI6881j-biLr4RyOjFgg",
-  authDomain: "bookstore-cms-5ed79.firebaseapp.com",
-  databaseURL: "https://bookstore-cms-5ed79.firebaseio.com",
-  projectId: "bookstore-cms-5ed79",
-  storageBucket: "",
-  messagingSenderId: "161123647171",
-  appId: "1:161123647171:web:6d52f109981bb26809ac76"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
