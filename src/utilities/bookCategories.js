@@ -1,11 +1,11 @@
 const bookCategories = [
-  'Action',
-  'Biography',
-  'History',
-  'Horror',
-  'Kids',
+  'Appetizers',
+  'Soups',
+  'Main Dishes',
+  'Breads',
+  'Desserts',
   'Learning',
-  'Sci-Fi'
+  'Miscellaneous'
 ];
 
 export default bookCategories;

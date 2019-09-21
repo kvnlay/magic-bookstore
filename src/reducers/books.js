@@ -5,24 +5,24 @@ const uuid = require("uuid/v1");
 const initialState = [
   {
     id: uuid(),
-    title: "Harry Potter: The Goblet Of Fire",
-    author: "Samuel O Katale",
-    category: "Action",
+    title: "Asma's Indian Kitchen",
+    author: "Asma Kahn",
+    category: "Miscellaneous",
+    progress: 80
+  },
+  {
+    id: uuid(),
+    title: "Cake Confidence",
+    author: "Mandy Merriman",
+    category: "Appetizers",
     progress: 100
   },
   {
     id: uuid(),
-    title: "The Gifted Hands",
-    author: "Matain Aoth",
-    category: "Action",
-    progress: 23
-  },
-  {
-    id: uuid(),
-    title: "48 Laws Of Power",
-    author: "Fredic Ojambo",
-    category: "Sci-Fi",
-    progress: 89
+    title: "Salt & Straw",
+    author: "Tyler Malek and JJ Goode",
+    category: "Desserts",
+    progress: 50
   }
 ];
 
