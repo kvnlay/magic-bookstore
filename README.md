@@ -1,6 +1,7 @@
-# magic-bookstore
 
-Simple bookstore app built with ReactJS and Redux where users can upload books, information about the book etc
+# Recipestore
+
+Simple recipe bookstore app built with ReactJS and Redux where users can upload recipe books, information about the book etc.
 
 ## Technologies
 
@@ -25,4 +26,5 @@ $ git clone https://github.com/kvnlay/magic-bookstore.git
 $ cd magic-bookstore
 $ npm install
 $ npm start
+
 ```
