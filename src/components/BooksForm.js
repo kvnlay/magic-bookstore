@@ -41,7 +41,7 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     return (
       <div className="add-form">
-        <h3>ADD NEW BOOK</h3>
+        <h3>ADD NEW RECIPE BOOK</h3>
         <form>
           <br />
           <input

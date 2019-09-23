@@ -164,7 +164,8 @@ body {
 }
 
 .details .title {
-  height: 29px;
+  width: 300px;
+  height: 50px;
   font-family: 'Roboto Slab', serif;
   font-size: 22px;
   font-weight: bold;
@@ -291,6 +292,7 @@ td:nth-of-type(3) {
   width: 80%;
   margin: 30px auto 100px auto;
   text-align: left;
+  padding-bottom: 50px;
 }
 
 .add-form h3 {
