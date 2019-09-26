@@ -28,3 +28,14 @@ $ npm install
 $ npm start
 
 ```
+## Future Improvements
+
+- User can create an account and authenticate
+- User can have a regular account.
+- There can be Admin user.
+- Admin users can add books to the main library.
+- User can search library for recipe books.
+- User can add a recipe book to his/her collection.
+- User can update the current page being read for each recipe book in his collection.
+- User can remove a book from his collection.
+
