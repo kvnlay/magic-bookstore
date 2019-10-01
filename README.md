@@ -3,6 +3,8 @@
 
 Simple recipe bookstore app built with ReactJS and Redux where users can upload recipe books, information about the book etc.
 
+![recipestore](https://user-images.githubusercontent.com/21004010/65952553-0256f480-e43a-11e9-9010-71b712d8492d.png)
+
 ## Technologies
 
 Project is created with:
