@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import "../App.css";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {};
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(email, password);
+  };
 
   return (
     <div className="container">
-      <form onSubmit={() => handleSubmit} className="signinForm">
+      <form onSubmit={handleSubmit} className="authForm">
         <div className="inputField">
           <label htmlFor="email"></label>
           <input
