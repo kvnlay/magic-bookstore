@@ -17,7 +17,7 @@ const BooksList = ({ books, deleteBook, handleFilterChange }) => (
     <CategoryFilter handleFilterChange={handleFilterChange} />
     <table className="book-table">
       <tbody>
-        {books.map(({ id, title, author, category, progress }) => (
+        {books && books.map(({ id, title, author, category, progress }) => (
           <Book
             key={id}
             id={id}
