@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "../App.css";
+import { connect } from "react-redux";
+import { signInAction } from "../../actions/authActions";
 
-export default function SignIn() {
+const SignIn = ({ authError, signInAction }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(email, password);
+    signInAction({ email, password });
   };
 
   return (
@@ -33,6 +35,18 @@ export default function SignIn() {
         </div>
         <button type="submit">Log in</button>
       </form>
+      <div className="error">{authError ? <p>{authError}</p> : null}</div>
     </div>
   );
-}
+};
+
+const mapStatetoProps = state => {
+  return {
+    authError: state.auth.authError
+  };
+};
+
+export default connect(
+  mapStatetoProps,
+  { signInAction }
+)(SignIn);
