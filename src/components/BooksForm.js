@@ -10,7 +10,7 @@ class BooksForm extends React.Component {
     title: "",
     author: "Unknown",
     category: "Action",
-    progress: getProgress()
+    progress: getProgress(),
   };
 
   handleChange = e => {
@@ -27,13 +27,13 @@ class BooksForm extends React.Component {
       title,
       author,
       category,
-      progress
+      progress,
     });
     this.setState({
       title: "",
       author: "",
       category: "Action",
-      progress: getProgress()
+      progress: getProgress(),
     });
   };
 
@@ -73,6 +73,7 @@ class BooksForm extends React.Component {
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired
 };
+
 
 export default connect(
   null,

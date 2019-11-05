@@ -1,11 +1,15 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function SignedOutLinks() {
   return (
-    <div className="panel-icon">
-      <FontAwesomeIcon icon={faUser} className="profile-icon" />
-    </div>
+    <ul>
+      <li>
+        <Link to="/signup">Sign up</Link>
+      </li>
+      <li>
+        <Link to="/signin">Sign in</Link>
+      </li>
+    </ul>
   );
 }

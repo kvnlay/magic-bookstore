@@ -4,11 +4,13 @@ import { getProgress } from "../utilities";
 const createBook = book => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
+    const creatorId = getState().firebase.auth.uid;
     firestore.collection("books").add({
       ...book,
       author: "unknown",
       category: "Action",
-      progress: getProgress()
+      progress: getProgress(),
+      creatorId
     }).then(() => {
       dispatch({
         type: CREATE_BOOK,

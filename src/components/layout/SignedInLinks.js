@@ -1,15 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { signOutAction } from "../../actions/authActions";
+import { connect } from "react-redux";
 
-export default function SignedInLinks() {
+function SignedInLinks({ signOut }) {
   return (
-    <ul>
-      <li>
-        <Link to="/signup">Sign up</Link>
-      </li>
-      <li>
-        <Link to="/signin">Sign in</Link>
-      </li>
-    </ul>
+    <div className="panel-icon">
+      <p onClick={signOut}>Sign Out</p>
+      <FontAwesomeIcon icon={faUser} className="profile-icon" />
+    </div>
   );
 }
+
+export default connect(
+  null,
+  { signOut: signOutAction }
+)(SignedInLinks);

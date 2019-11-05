@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import "../App.css";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { signUpAction } from "../../actions/authActions";
 
-export default function SignUp() {
+function SignUp({ auth, signup, authError }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(email, password, username);
+    signup({ username, email, password });
   };
+
+  if (auth.uid) return <Redirect to="/" />;
   return (
     <div className="container">
       <form onSubmit={handleSubmit} className="authForm">
@@ -40,8 +45,23 @@ export default function SignUp() {
             onChange={e => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Log in</button>
+        <button type="submit">Sign up</button>
       </form>
+      <div className="error">{authError ? <p>{authError}</p> : null}</div>
     </div>
   );
 }
+
+const mapStatetoProps = state => {
+  return {
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  };
+};
+
+export default connect(
+  mapStatetoProps,
+  {
+    signup: signUpAction
+  }
+)(SignUp);

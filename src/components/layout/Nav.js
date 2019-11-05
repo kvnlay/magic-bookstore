@@ -3,17 +3,24 @@ import "../App.css";
 import SignedInLinks from "./SignedInLinks";
 import { Link } from "react-router-dom";
 import SignedOutLinks from "./SignedOutLinks";
+import { connect } from "react-redux";
 
-const Nav = () => (
+const Nav = ({ auth }) => (
   <div className="panel">
     <div className="menu">
       <h1 className="logo">
         <Link to="/">Bookstore CMS</Link>
       </h1>
-      <SignedInLinks />
-      <SignedOutLinks />
+      {auth.uid ? <SignedInLinks /> : <SignedOutLinks />}
     </div>
   </div>
 );
 
-export default Nav;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    auth: state.firebase.auth
+  };
+};
+
+export default connect(mapStateToProps)(Nav);
